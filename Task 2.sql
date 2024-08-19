@@ -30,12 +30,12 @@ ENGINE = InnoDB;
 -- Table `LittleLemonDB`.`MenuItems`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `LittleLemonDB`.`MenuItems` (
-  `MenuItemID` INT NOT NULL,
+  `MenuItemsID` INT NOT NULL,
   `CourseName` VARCHAR(255) NOT NULL,
   `StarterName` VARCHAR(255) NOT NULL,
   `DesertName` VARCHAR(255) NOT NULL,
   `DrinkName` VARCHAR(255) NOT NULL,
-  PRIMARY KEY (`MenuItemID`))
+  PRIMARY KEY (`MenuItemsID`))
 ENGINE = InnoDB;
 
 
@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS `LittleLemonDB`.`Menus` (
   INDEX `menu_items_id_fk_idx` (`MenuItemsID` ASC) VISIBLE,
   CONSTRAINT `menu_items_id_fk`
     FOREIGN KEY (`MenuItemsID`)
-    REFERENCES `LittleLemonDB`.`MenuItems` (`MenuItemID`)
+    REFERENCES `LittleLemonDB`.`MenuItems` (`MenuItemsID`)
     ON DELETE CASCADE
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
